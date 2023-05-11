@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "PoE Expand Challenges",
+  "version": "1.0",
+  "description": "Automatically expand or hide all (in)complete Path of Exile challenges on the official website.",
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "images/icon-16.ico",
+    "32": "images/icon-32.ico",
+    "48": "images/icon-48.ico",
+    "128": "images/icon-128.ico"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "css": ["css/style.css"],
+      "matches": ["https://www.pathofexile.com/account/view-profile/*/challenges*"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/button-expand-complete.png",
+        "images/button-expand-incomplete.png",
+        "images/button-collapse-complete.png",
+        "images/button-collapse-incomplete.png",
+        "images/button-hide-complete.png",
+        "images/button-hide-incomplete.png",
+        "images/button-show-complete.png",
+        "images/button-show-incomplete.png",
+        "images/button-item-normal.png",
+        "images/button-item-toggled.png"
+      ],
+      "matches": [ "https://www.pathofexile.com/*" ]
+    }    
+  ]
+}

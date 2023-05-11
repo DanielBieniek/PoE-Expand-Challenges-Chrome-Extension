@@ -1,0 +1,81 @@
+.PoE-Expand-Challenges-Extension {
+    line-height: 42px;
+    height: 52px;
+    width: 650px;
+    position: relative;
+    cursor: default;
+    color: #e7b477;
+    padding-left: 50px;
+}
+
+.POEECE-hidden {
+    display: none;
+}
+
+.PoE-Expand-Challenges-Extension a {
+    display: inline-block;
+    width: 35px;
+    height: 42px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.POEECE-expand-complete {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-expand-complete.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.POEECE-expand-incomplete {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-expand-incomplete.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.POEECE-expand-complete.toggled {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-collapse-complete.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.POEECE-expand-incomplete.toggled {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-collapse-incomplete.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.POEECE-hide-complete {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-hide-complete.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.POEECE-hide-incomplete {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-hide-incomplete.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.POEECE-hide-complete.toggled {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-show-complete.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.POEECE-hide-incomplete.toggled {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-show-incomplete.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.POEECE-hide-complete-item {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-item-normal.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.POEECE-hide-complete-item.toggled {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-item-toggled.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
