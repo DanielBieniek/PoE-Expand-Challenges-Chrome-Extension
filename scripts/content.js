@@ -10,8 +10,8 @@ newDiv.appendChild(newLinkHideComplete);
 
 newLinkHideComplete.addEventListener('click', function(event) {
     let toggled = newLinkHideComplete.classList.toggle('toggled');
-    let incomplete = document.querySelectorAll(".achievement:not(.incomplete)");
-    for(let element of incomplete){
+    let selected = document.querySelectorAll(".achievement:not(.incomplete)");
+    for(let element of selected){
         element.classList.toggle('POEECE-hidden');
     }
     chrome.storage.local.set({ 'POEECE-hide-complete': toggled });
@@ -25,8 +25,8 @@ newDiv.appendChild(newLinkHideIncomplete);
 
 newLinkHideIncomplete.addEventListener('click', function(event) {
     let toggled = newLinkHideIncomplete.classList.toggle('toggled');
-    let incomplete = document.querySelectorAll(".achievement.incomplete");
-    for(let element of incomplete){
+    let selected = document.querySelectorAll(".achievement.incomplete");
+    for(let element of selected){
         element.classList.toggle('POEECE-hidden');
     }
     chrome.storage.local.set({ 'POEECE-hide-incomplete': toggled });
@@ -40,8 +40,8 @@ newDiv.appendChild(newLinkExpandComplete);
 
 newLinkExpandComplete.addEventListener('click', function(event) {
     let toggled = newLinkExpandComplete.classList.toggle('toggled');
-    let complete = document.querySelectorAll(".achievement:not(.incomplete)");
-    for(let element of complete){
+    let selected = document.querySelectorAll(".achievement:not(.incomplete)");
+    for(let element of selected){
         if (toggled) {
             //expand
             if (!element.querySelector('a').classList.contains('expanded')) {
@@ -67,8 +67,8 @@ newDiv.appendChild(newLinkExpandIncomplete);
 
 newLinkExpandIncomplete.addEventListener('click', function(event) {
     let toggled = newLinkExpandIncomplete.classList.toggle('toggled');
-    let incomplete = document.querySelectorAll(".achievement.incomplete");
-    for(let element of incomplete){
+    let selected = document.querySelectorAll(".achievement.incomplete");
+    for(let element of selected){
         if (toggled) {
             //expand
             if (!element.querySelector('a').classList.contains('expanded')) {
@@ -94,11 +94,38 @@ newDiv.appendChild(newLinkHideCompleteItem);
 
 newLinkHideCompleteItem.addEventListener('click', function(event) {
     let toggled = newLinkHideCompleteItem.classList.toggle('toggled');
-    let incomplete = document.querySelectorAll(".achievement.incomplete .finished");
-    for(let element of incomplete){
+    let selected = document.querySelectorAll(".achievement.incomplete .finished");
+    for(let element of selected){
         element.classList.toggle('POEECE-hidden');
     }
     chrome.storage.local.set({ 'POEECE-hide-complete-item': toggled });
+});
+
+// add challenge numbers
+let selected = document.querySelectorAll(".achievement h2:first-of-type");
+let i = 0;
+for(let element of selected){
+    i++;
+    let newNumberSpan = document.createElement('span');
+    newNumberSpan.classList.add('POEECE-numbers-span');
+    newNumberSpan.classList.add('POEECE-hidden');
+    newNumberSpan.textContent = i + '. ';
+    element.insertAdjacentElement('afterbegin', newNumberSpan);
+}
+
+// show/hide challenge numbers
+const newLinkShowNumber = document.createElement('a');
+newLinkShowNumber.classList.add('POEECE-show-number');
+newLinkShowNumber.setAttribute('title', 'Show Challenge number');
+newDiv.appendChild(newLinkShowNumber);
+
+newLinkShowNumber.addEventListener('click', function(event) {
+    let toggled = newLinkShowNumber.classList.toggle('toggled');
+    let selected = document.querySelectorAll(".POEECE-numbers-span");
+    for(let element of selected){
+        element.classList.toggle('POEECE-hidden');
+    }
+    chrome.storage.local.set({ 'POEECE-show-number': toggled });
 });
 
 // INSERT THE NEW UI BEFORE THE CHALLENGES LIST
@@ -107,19 +134,9 @@ achievementList.parentNode.insertBefore(newDiv, achievementList);
 
 // SET DEFAULT
 chrome.storage.local.get(null).then((result) => {
-    if (result['POEECE-hide-complete']) {
-        document.querySelector('.POEECE-hide-complete').click();
-    }
-    if (result['POEECE-hide-incomplete']) {
-        document.querySelector('.POEECE-hide-incomplete').click();
-    }
-    if (result['POEECE-expand-complete']) {
-        document.querySelector('.POEECE-expand-complete').click();
-    }
-    if (result['POEECE-expand-incomplete']) {
-        document.querySelector('.POEECE-expand-incomplete').click();
-    }
-    if (result['POEECE-hide-complete-item']) {
-        document.querySelector('.POEECE-hide-complete-item').click();
-    }
+    for (let className in result) {
+        if (result[className]) {
+          document.querySelector(`.${className}`).click();
+        }
+      }
 });
