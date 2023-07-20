@@ -79,3 +79,15 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.POEECE-show-number {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-number-normal.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.POEECE-show-number.toggled {
+    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-number-toggled.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
