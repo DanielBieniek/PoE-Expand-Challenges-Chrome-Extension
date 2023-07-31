@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "PoE Expand Challenges",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Expand or hide all (in)complete PoE challenges. This product isn't affiliated with or endorsed by Grinding Gear Games in any way.",
   "author": "dannyb.cws@gmail.com",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqQJIcyAudBMMfLZqur7M7KonHB0DyWe2JtShMYOv3i6Z+8oby7DqmgtjJClcptfbADVwFBSonXHg0mRWlGiU7XcFuCoR1AjI3ZeMbNkgZjTsVyp7FHUQ8smHGswq52niqp4JO6IfwPUztUofikKXVdMEEUKn/lR/8kMLqGLo9wvYQu39n8pybQkqB+sCOEulwY3c3Rr4wI1VRWujsWszbMasTDJNQ7KmoWCmbUm6+SOYsYd7hvhUWeQjfgDymTrIKIDd6/P2CnCVMFwLoroxmgRkIG6KwFDy4dU/nq+Cdn5oykYVCf5EHFnYfIMdNpnXD5ctWVg/2t9dVDPlNNEFHQIDAQAB",
@@ -9,16 +9,18 @@
     "storage"
   ],
   "icons": {
-    "16": "images/icon-16.ico",
-    "32": "images/icon-32.ico",
-    "48": "images/icon-48.ico",
-    "128": "images/icon-128.ico"
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
   },
   "content_scripts": [
     {
       "js": ["scripts/content.js"],
       "css": ["css/style.css"],
-      "matches": ["https://www.pathofexile.com/account/view-profile/*/challenges*"]
+      "matches": [
+        "https://www.pathofexile.com/account/view-profile/*/challenges*"
+      ]
     }
   ],
   "web_accessible_resources": [
@@ -35,9 +37,18 @@
         "images/button-item-normal.png",
         "images/button-item-toggled.png",
         "images/button-number-normal.png",
-        "images/button-number-toggled.png"
+        "images/button-number-toggled.png",
+        "images/button-pin-normal.png",
+        "images/button-pin-toggled.png",
+        "images/pin.png"
       ],
       "matches": [ "https://www.pathofexile.com/*" ]
     }    
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "dannyb.cws@gmail.com",
+      "strict_min_version": "109.0"
+    }
+  }
 }
