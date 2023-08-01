@@ -12,12 +12,13 @@ This product isn't affiliated with or endorsed by Grinding Gear Games in any way
 
 
 # Features
-- Hide/Show all complete challenges
-- Hide/Show all incomplete challenges
-- Expand/Collapse all complete challenges
-- Expand/Collapse all incomplete challenges
-- Hide/Show all complete sub-challenges (of incomplete challenges)
-- Hide/Show challenge number
+- Hide all complete challenges
+- Hide all incomplete challenges
+- Expand all complete challenges
+- Expand all incomplete challenges
+- Hide all complete sub-challenges (of incomplete challenges)
+- Show challenge numbers
+- Enable pinning challenges
 
 # Preview
 v1.0
@@ -30,6 +31,9 @@ v1.2
 ![PoE-Expand-Challenges-Chrome-Extension-5](https://i.imgur.com/zApv401.png)
 
 # Changelog
+### v1.2.1
+- Fixed incorrect text
+- Failed try of a Firefox Android release
 
 ### v1.2
 - Mozilla Firefox release
