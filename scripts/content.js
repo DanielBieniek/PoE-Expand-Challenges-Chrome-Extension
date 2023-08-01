@@ -2,8 +2,8 @@
 
 
 // CREATE NEW UI BUTTON BAR
-const newDiv = document.createElement('div');
-newDiv.classList.add('PoE-Expand-Challenges-Extension');
+const buttonBar = document.createElement('div');
+buttonBar.classList.add('PoE-Expand-Challenges-Extension');
 addNumbers();
 addPins();
 let pins = [];
@@ -11,11 +11,11 @@ let pins = [];
 // CREATE BUTTONS
 let hideComplete = createNewButton('POEECE-hide-complete', 'Hide complete challenges');
 let hideIncomplete = createNewButton('POEECE-hide-incomplete', 'Hide incomplete challenges');
-let expandComplete = createNewButton('POEECE-expand-complete', 'Hide complete challenges');
-let expandIncomplete = createNewButton('POEECE-expand-incomplete', 'Hide complete inchallenges');
+let expandComplete = createNewButton('POEECE-expand-complete', 'Expand complete challenges');
+let expandIncomplete = createNewButton('POEECE-expand-incomplete', 'Expand incomplete challenges');
 let hideItem = createNewButton('POEECE-hide-complete-item', 'Hide complete sub-challenges');
-let showNumber = createNewButton('POEECE-show-number', 'Show Challenge number');
-let showPins = createNewButton('POEECE-show-pins', 'Enable Pinning Challenges');
+let showNumber = createNewButton('POEECE-show-number', 'Show challenge numbers');
+let showPins = createNewButton('POEECE-show-pins', 'Enable pinning challenges');
 
 // ADD BUTTON EVENTS
 hideComplete.addEventListener('click', hideCompleteEvent);
@@ -28,7 +28,7 @@ showPins.addEventListener('click', showPinsEvent);
 
 // ADD UI
 const achievementList = document.querySelector(".achievement-list");
-achievementList.parentNode.insertBefore(newDiv, achievementList);
+achievementList.parentNode.insertBefore(buttonBar, achievementList);
 
 setDefault()
 
@@ -42,7 +42,7 @@ function createNewButton(className, title) {
     let newButton = document.createElement('a');
     newButton.classList.add(className);
     newButton.setAttribute('title', title);
-    newDiv.appendChild(newButton);
+    buttonBar.appendChild(newButton);
     return newButton;
 }
 
