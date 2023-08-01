@@ -41,7 +41,6 @@
     right: 63px;
     top: 20px;
     cursor: pointer;
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/pin.png');
     overflow: hidden;
     background-size: contain;
     opacity: 0.4;
@@ -61,65 +60,27 @@
     flex-direction: column;
 }
 
+/* Makes sure pinned challenges aren't hidden */
 .POEECE-list > .POEECE-pinned {
     display: block;
 }
 
-/* HIDE COMPLETE */
-.POEECE-hide-complete {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-hide-complete.png');
-}
-.POEECE-hide-complete.toggled {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-show-complete.png');
-}
-
-/* HIDE INCOMPLETE */
-.POEECE-hide-incomplete {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-hide-incomplete.png');
-}
-.POEECE-hide-incomplete.toggled {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-show-incomplete.png');
-}
-
-/* EXPAND COMPLETE */
-.POEECE-expand-complete {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-expand-complete.png');
-}
-.POEECE-expand-complete.toggled {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-collapse-complete.png');
-}
-
-/* EXPAND INCOMPLETE */
-.POEECE-expand-incomplete {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-expand-incomplete.png');
-}
-.POEECE-expand-incomplete.toggled {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-collapse-incomplete.png');
-}
-
-/* HIDE ITEM */
-.POEECE-hide-complete-item {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-item-normal.png');
-}
-.POEECE-hide-complete-item.toggled {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-item-toggled.png');
-}
-
-/* SHOW NUMBER */
-.POEECE-show-number {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-number-normal.png');
-}
-.POEECE-show-number.toggled {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-number-toggled.png');
-}
-
-/* SHOW PINS */
-.POEECE-show-pins {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-pin-normal.png');
-}
-.POEECE-show-pins.toggled {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-pin-toggled.png');
-}
+/* GOOGLE CHROME IMAGES */
+.POEECE-hide-complete               { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-hide-complete.png'); }
+.POEECE-hide-complete.toggled       { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-show-complete.png'); }
+.POEECE-hide-incomplete             { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-hide-incomplete.png'); }
+.POEECE-hide-incomplete.toggled     { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-show-incomplete.png'); }
+.POEECE-expand-complete             { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-expand-complete.png'); }
+.POEECE-expand-complete.toggled     { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-collapse-complete.png'); }
+.POEECE-expand-incomplete           { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-expand-incomplete.png'); }
+.POEECE-expand-incomplete.toggled   { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-collapse-incomplete.png'); }
+.POEECE-hide-complete-item          { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-item-normal.png'); }
+.POEECE-hide-complete-item.toggled  { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-item-toggled.png'); }
+.POEECE-show-number                 { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-number-normal.png'); }
+.POEECE-show-number.toggled         { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-number-toggled.png'); }
+.POEECE-show-pins                   { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-pin-normal.png'); }
+.POEECE-show-pins.toggled           { background-image: url('chrome-extension://__MSG_@@extension_id__/images/button-pin-toggled.png'); }
+.POEECE-pin                         { background-image: url('chrome-extension://__MSG_@@extension_id__/images/pin.png'); }
 
 /* MOZILLA FIREFOX IMAGES OVERWRITE */
 @supports (-moz-appearance:none) {
